@@ -25,15 +25,21 @@ class MovieDetailsInteractor {
         self.movie = movie
     }
     
-    fileprivate func cancelNetworkingOperation() {
+    fileprivate func cancelNetworkingOperations() {
         moviesTokenSource?.cancel()
         moviesTokenSource = nil
+    }
+    
+    deinit {
+        self.cancelNetworkingOperations()
     }
 }
 
 extension MovieDetailsInteractor: MovieDetailsInteractorProtocol {
     
     func prepare() {
+        
+        self.cancelNetworkingOperations()
         
         firstly {
             movieNetworking.fetcMovie(forIdentifier: self.movie.id, cancellationToken: self.moviesTokenSource?.token)
@@ -43,5 +49,4 @@ extension MovieDetailsInteractor: MovieDetailsInteractorProtocol {
             
         }
     }
-    
 }

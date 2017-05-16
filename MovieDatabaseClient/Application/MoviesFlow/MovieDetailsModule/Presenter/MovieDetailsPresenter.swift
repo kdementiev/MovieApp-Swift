@@ -31,5 +31,4 @@ class MovieDetailsPresenter: MovieDetailsPresenterProtocol {
     func onMovieDetailedDataReceived(movie: MovieInfoRecord) {
         view?.present(movie: movie)
     }
-    
 }

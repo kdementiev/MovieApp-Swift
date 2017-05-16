@@ -25,6 +25,10 @@ class PopularMoviesInteractor {
         moviesTokenSource?.cancel()
         moviesTokenSource = nil
     }
+    
+    deinit {
+        self.cancelNetworkingOperation()
+    }
 }
 
 extension PopularMoviesInteractor: PopularMoviesInteractorProtocol {
