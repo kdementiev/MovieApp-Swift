@@ -35,7 +35,7 @@ extension PopularMoviesViewController: PopularMoviesViewProtocol {
     }
     
     func showOfflineState(offline: Bool) {
-        
+
     }
 }
 

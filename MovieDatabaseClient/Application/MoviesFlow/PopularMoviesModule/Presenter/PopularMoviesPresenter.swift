@@ -28,24 +28,30 @@ class PopularMoviesPresenter: PopularMoviesPresenterProtocol {
     
     func userWantsLatestContent() {
         
+        // Ask to fetch more data.
+        interactor?.requestContent()
     }
     
     func userWantsDetailedInformation(withItemAtIndex index: Int) {
         
+        guard let movie = interactor?.movie(forIndex: index) else {
+            return
+        }
+        
+        router?.navigateToMovieDetails(withMovie: movie)
     }
     
     // MARK: - Interactor Layer feedback -
     
     func onNewContentReceived(_ movies: [MovieInfoRecord]) {
-        
+        view?.presentContent(withMovies: movies)
     }
     
     func onNetworkConnectionLost() {
-        
+        view?.showOfflineState(offline: true)
     }
     
     func onNetworkConnectionRestored() {
-        
+        view?.showOfflineState(offline: false)
     }
-    
 }

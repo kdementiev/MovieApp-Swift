@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol MoviesDataProviderDelegate: class {
     func onMovieSelectedAction(_ index: IndexPath)
 }

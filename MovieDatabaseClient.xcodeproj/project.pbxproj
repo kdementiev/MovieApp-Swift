@@ -39,6 +39,10 @@
 		749B5E0D1ECAF0320057C448 /* UITableView+DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E0A1ECAF0320057C448 /* UITableView+DataProvider.swift */; };
 		749B5E101ECAF08F0057C448 /* MoviesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E0F1ECAF08F0057C448 /* MoviesDataProvider.swift */; };
 		749B5E131ECAF2280057C448 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E121ECAF2280057C448 /* MovieTableViewCell.swift */; };
+		749B5E2D1ECB08E90057C448 /* MoviesNetworkingServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E2B1ECB08E90057C448 /* MoviesNetworkingServiceProtocol.swift */; };
+		749B5E2E1ECB08E90057C448 /* NetworkingStatusServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E2C1ECB08E90057C448 /* NetworkingStatusServiceProtocol.swift */; };
+		749B5E301ECB0C2D0057C448 /* NetworkingStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E2F1ECB0C2D0057C448 /* NetworkingStatusService.swift */; };
+		749B5E321ECB0C380057C448 /* TMDBNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E311ECB0C380057C448 /* TMDBNetworkingService.swift */; };
 		B171BBC0D9E11471965A4C99 /* Pods_MovieDatabaseClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169AFD3DBA68EE00F0051426 /* Pods_MovieDatabaseClient.framework */; };
 		DFA29FF371B740CBED9FC161 /* Pods_MovieDatabaseClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B6BDB5C8321AC1917DF849 /* Pods_MovieDatabaseClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +97,10 @@
 		749B5E0A1ECAF0320057C448 /* UITableView+DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+DataProvider.swift"; sourceTree = "<group>"; };
 		749B5E0F1ECAF08F0057C448 /* MoviesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataProvider.swift; sourceTree = "<group>"; };
 		749B5E121ECAF2280057C448 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		749B5E2B1ECB08E90057C448 /* MoviesNetworkingServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesNetworkingServiceProtocol.swift; sourceTree = "<group>"; };
+		749B5E2C1ECB08E90057C448 /* NetworkingStatusServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingStatusServiceProtocol.swift; sourceTree = "<group>"; };
+		749B5E2F1ECB0C2D0057C448 /* NetworkingStatusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingStatusService.swift; sourceTree = "<group>"; };
+		749B5E311ECB0C380057C448 /* TMDBNetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBNetworkingService.swift; sourceTree = "<group>"; };
 		C453F19D82A2983C677104A1 /* Pods-MovieDatabaseClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDatabaseClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDatabaseClient/Pods-MovieDatabaseClient.debug.xcconfig"; sourceTree = "<group>"; };
 		D7B6BDB5C8321AC1917DF849 /* Pods_MovieDatabaseClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDatabaseClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +205,9 @@
 		7446BDEE1ECA08E900F1BDE5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				749B5E181ECB03220057C448 /* Contract */,
+				749B5E191ECB03220057C448 /* NetworkingStatusService */,
+				749B5E1A1ECB03220057C448 /* TMDBNetworkingService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -398,6 +409,31 @@
 				749B5E121ECAF2280057C448 /* MovieTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		749B5E181ECB03220057C448 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E2B1ECB08E90057C448 /* MoviesNetworkingServiceProtocol.swift */,
+				749B5E2C1ECB08E90057C448 /* NetworkingStatusServiceProtocol.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		749B5E191ECB03220057C448 /* NetworkingStatusService */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E2F1ECB0C2D0057C448 /* NetworkingStatusService.swift */,
+			);
+			path = NetworkingStatusService;
+			sourceTree = "<group>";
+		};
+		749B5E1A1ECB03220057C448 /* TMDBNetworkingService */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E311ECB0C380057C448 /* TMDBNetworkingService.swift */,
+			);
+			path = TMDBNetworkingService;
 			sourceTree = "<group>";
 		};
 		9C5A6FBEE34F051E8B670157 /* Pods */ = {
@@ -632,9 +668,11 @@
 				749B5E0B1ECAF0320057C448 /* UITableViewCell+Usability.swift in Sources */,
 				7446BE4F1ECA099600F1BDE5 /* PopularMoviesRouterProtocol.swift in Sources */,
 				7446BE421ECA099600F1BDE5 /* MovieDetailsInteractorProtocol.swift in Sources */,
+				749B5E301ECB0C2D0057C448 /* NetworkingStatusService.swift in Sources */,
 				7446BDE61ECA082700F1BDE5 /* AppDelegate.swift in Sources */,
 				749B5E101ECAF08F0057C448 /* MoviesDataProvider.swift in Sources */,
 				7446BE511ECA099600F1BDE5 /* PopularMoviesModuleConfigurator.swift in Sources */,
+				749B5E2D1ECB08E90057C448 /* MoviesNetworkingServiceProtocol.swift in Sources */,
 				7446BE461ECA099600F1BDE5 /* MovieDetailsViewProtocol.swift in Sources */,
 				7446BE441ECA099600F1BDE5 /* MovieDetailsPresenterProtocol.swift in Sources */,
 				7446BE4B1ECA099600F1BDE5 /* MovieDetailsViewController.swift in Sources */,
@@ -652,6 +690,8 @@
 				749B5E0D1ECAF0320057C448 /* UITableView+DataProvider.swift in Sources */,
 				7446BE431ECA099600F1BDE5 /* MovieDetailsModuleProtocol.swift in Sources */,
 				7446BE491ECA099600F1BDE5 /* MovieDetailsPresenter.swift in Sources */,
+				749B5E2E1ECB08E90057C448 /* NetworkingStatusServiceProtocol.swift in Sources */,
+				749B5E321ECB0C380057C448 /* TMDBNetworkingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
