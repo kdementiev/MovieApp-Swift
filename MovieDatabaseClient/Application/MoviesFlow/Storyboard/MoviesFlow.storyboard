@@ -54,8 +54,8 @@
                                             <size key="shadowOffset" width="0.0" height="1"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.7" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9b-l6-5bl">
-                                            <rect key="frame" x="317.5" y="10" width="25.5" height="21.5"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                            <rect key="frame" x="321" y="10" width="22" height="21.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" red="1" green="0.79514578820755699" blue="0.28550021386508351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="946.875" y="-252.46478873239437"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Details View Controller-->
         <scene sceneID="FCU-WC-OnI">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RY2-4I-pkL" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RY2-4I-pkL" customClass="MovieDetailsViewController" customModule="MovieDatabaseClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qMN-bY-feb"/>
                         <viewControllerLayoutGuide type="bottom" id="QyH-wi-RQ3"/>
@@ -271,11 +271,11 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="bgN-SK-zrK" id="hEO-hX-3Mp"/>
-                        <outlet property="genreLabel" destination="KDE-Pw-usV" id="yWY-dp-5XW"/>
-                        <outlet property="overviewLabel" destination="R9a-FX-FYq" id="7ZE-E4-ybu"/>
-                        <outlet property="releaseDateLabel" destination="Uzu-Ao-tjs" id="lqJ-15-Mse"/>
-                        <outlet property="titleLabel" destination="YTF-RJ-046" id="i6Z-UK-dEy"/>
+                        <outlet property="backgroundImageView" destination="bgN-SK-zrK" id="f1e-3i-shl"/>
+                        <outlet property="genreLabel" destination="KDE-Pw-usV" id="8Sh-Td-Gf1"/>
+                        <outlet property="overviewLabel" destination="R9a-FX-FYq" id="TGn-ik-Ubv"/>
+                        <outlet property="releaseDateLabel" destination="Uzu-Ao-tjs" id="jdg-cp-4lW"/>
+                        <outlet property="titleLabel" destination="YTF-RJ-046" id="SK9-dG-32o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qut-pq-X9g" userLabel="First Responder" sceneMemberID="firstResponder"/>

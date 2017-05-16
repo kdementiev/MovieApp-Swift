@@ -20,7 +20,7 @@ class PopularMoviesInteractor {
     
     lazy var moviesTokenSource: CancellationTokenSource? = CancellationTokenSource()
     
-    
+
     fileprivate func cancelNetworkingOperation() {
         moviesTokenSource?.cancel()
         moviesTokenSource = nil

@@ -10,6 +10,7 @@ import Foundation
 
 protocol MovieDetailsInteractorOutput: class {
     
+    func onMovieDetailedDataReceived(movie: MovieInfoRecord)
 }
 
 protocol MovieDetailsInteractorProtocol: class {
@@ -19,4 +20,5 @@ protocol MovieDetailsInteractorProtocol: class {
         Method offered to perform initial preparations inside interactor.
      */
     func prepare()
+
 }

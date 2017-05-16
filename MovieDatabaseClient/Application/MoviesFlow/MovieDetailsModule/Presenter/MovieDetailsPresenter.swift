@@ -18,9 +18,18 @@ class MovieDetailsPresenter: MovieDetailsPresenterProtocol {
     var moduleOutput: MovieDetailsModuleOutputProtocol?
     
     
+    // MARK: - View Layer feedback -
+    
     func viewReadyForInteraction() {
         
         // Forward event to interactor
         interactor?.prepare()
     }
+    
+    // MARK: - Interactor Layer feedback -
+    
+    func onMovieDetailedDataReceived(movie: MovieInfoRecord) {
+        view?.present(movie: movie)
+    }
+    
 }

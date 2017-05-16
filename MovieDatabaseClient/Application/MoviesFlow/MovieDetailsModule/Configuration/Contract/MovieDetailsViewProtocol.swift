@@ -18,5 +18,6 @@ protocol MovieDetailsViewOutput: class {
 
 protocol MovieDetailsViewProtocol: class {
     var output: MovieDetailsViewOutput? { get set }
-    
+ 
+    func present(movie: MovieInfoRecord)
 }
