@@ -33,6 +33,12 @@
 		7446BE541ECA099600F1BDE5 /* PopularMoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446BE3F1ECA099600F1BDE5 /* PopularMoviesRouter.swift */; };
 		7446BE551ECA099600F1BDE5 /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446BE411ECA099600F1BDE5 /* PopularMoviesViewController.swift */; };
 		7446BE571ECA09C600F1BDE5 /* MoviesFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7446BE561ECA09C600F1BDE5 /* MoviesFlow.storyboard */; };
+		749B5E051ECAEC2D0057C448 /* MovieInfoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E041ECAEC2D0057C448 /* MovieInfoRecord.swift */; };
+		749B5E0B1ECAF0320057C448 /* UITableViewCell+Usability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E071ECAF0320057C448 /* UITableViewCell+Usability.swift */; };
+		749B5E0C1ECAF0320057C448 /* TableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E091ECAF0320057C448 /* TableViewDataProvider.swift */; };
+		749B5E0D1ECAF0320057C448 /* UITableView+DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E0A1ECAF0320057C448 /* UITableView+DataProvider.swift */; };
+		749B5E101ECAF08F0057C448 /* MoviesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E0F1ECAF08F0057C448 /* MoviesDataProvider.swift */; };
+		749B5E131ECAF2280057C448 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B5E121ECAF2280057C448 /* MovieTableViewCell.swift */; };
 		B171BBC0D9E11471965A4C99 /* Pods_MovieDatabaseClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169AFD3DBA68EE00F0051426 /* Pods_MovieDatabaseClient.framework */; };
 		DFA29FF371B740CBED9FC161 /* Pods_MovieDatabaseClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B6BDB5C8321AC1917DF849 /* Pods_MovieDatabaseClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +87,12 @@
 		7446BE3F1ECA099600F1BDE5 /* PopularMoviesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularMoviesRouter.swift; sourceTree = "<group>"; };
 		7446BE411ECA099600F1BDE5 /* PopularMoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewController.swift; sourceTree = "<group>"; };
 		7446BE561ECA09C600F1BDE5 /* MoviesFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoviesFlow.storyboard; sourceTree = "<group>"; };
+		749B5E041ECAEC2D0057C448 /* MovieInfoRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfoRecord.swift; sourceTree = "<group>"; };
+		749B5E071ECAF0320057C448 /* UITableViewCell+Usability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Usability.swift"; sourceTree = "<group>"; };
+		749B5E091ECAF0320057C448 /* TableViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataProvider.swift; sourceTree = "<group>"; };
+		749B5E0A1ECAF0320057C448 /* UITableView+DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+DataProvider.swift"; sourceTree = "<group>"; };
+		749B5E0F1ECAF08F0057C448 /* MoviesDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataProvider.swift; sourceTree = "<group>"; };
+		749B5E121ECAF2280057C448 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		C453F19D82A2983C677104A1 /* Pods-MovieDatabaseClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDatabaseClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDatabaseClient/Pods-MovieDatabaseClient.debug.xcconfig"; sourceTree = "<group>"; };
 		D7B6BDB5C8321AC1917DF849 /* Pods_MovieDatabaseClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDatabaseClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -146,6 +158,7 @@
 		7446BDDF1ECA082700F1BDE5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				749B5E021ECAEC070057C448 /* Common */,
 				7446BDEA1ECA08E900F1BDE5 /* MoviesFlow */,
 				7446BDEE1ECA08E900F1BDE5 /* Services */,
 				7446BDE01ECA082700F1BDE5 /* AppDelegate.swift */,
@@ -329,9 +342,62 @@
 		7446BE401ECA099600F1BDE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				749B5E111ECAF2040057C448 /* Cells */,
+				749B5E0E1ECAF0700057C448 /* DataProviders */,
 				7446BE411ECA099600F1BDE5 /* PopularMoviesViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		749B5E021ECAEC070057C448 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E061ECAF0320057C448 /* Categories */,
+				749B5E031ECAEC070057C448 /* DataStructures */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		749B5E031ECAEC070057C448 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E041ECAEC2D0057C448 /* MovieInfoRecord.swift */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		749B5E061ECAF0320057C448 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E071ECAF0320057C448 /* UITableViewCell+Usability.swift */,
+				749B5E081ECAF0320057C448 /* UITableViewDataProvider */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		749B5E081ECAF0320057C448 /* UITableViewDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E091ECAF0320057C448 /* TableViewDataProvider.swift */,
+				749B5E0A1ECAF0320057C448 /* UITableView+DataProvider.swift */,
+			);
+			path = UITableViewDataProvider;
+			sourceTree = "<group>";
+		};
+		749B5E0E1ECAF0700057C448 /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E0F1ECAF08F0057C448 /* MoviesDataProvider.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
+		749B5E111ECAF2040057C448 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				749B5E121ECAF2280057C448 /* MovieTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9C5A6FBEE34F051E8B670157 /* Pods */ = {
@@ -561,10 +627,13 @@
 			files = (
 				7446BE4D1ECA099600F1BDE5 /* PopularMoviesModuleProtocol.swift in Sources */,
 				7446BE531ECA099600F1BDE5 /* PopularMoviesPresenter.swift in Sources */,
+				749B5E131ECAF2280057C448 /* MovieTableViewCell.swift in Sources */,
 				7446BE481ECA099600F1BDE5 /* MovieDetailsInteractor.swift in Sources */,
+				749B5E0B1ECAF0320057C448 /* UITableViewCell+Usability.swift in Sources */,
 				7446BE4F1ECA099600F1BDE5 /* PopularMoviesRouterProtocol.swift in Sources */,
 				7446BE421ECA099600F1BDE5 /* MovieDetailsInteractorProtocol.swift in Sources */,
 				7446BDE61ECA082700F1BDE5 /* AppDelegate.swift in Sources */,
+				749B5E101ECAF08F0057C448 /* MoviesDataProvider.swift in Sources */,
 				7446BE511ECA099600F1BDE5 /* PopularMoviesModuleConfigurator.swift in Sources */,
 				7446BE461ECA099600F1BDE5 /* MovieDetailsViewProtocol.swift in Sources */,
 				7446BE441ECA099600F1BDE5 /* MovieDetailsPresenterProtocol.swift in Sources */,
@@ -572,12 +641,15 @@
 				7446BE4E1ECA099600F1BDE5 /* PopularMoviesPresenterProtocol.swift in Sources */,
 				7446BE471ECA099600F1BDE5 /* MovieDetailsModuleConfigurator.swift in Sources */,
 				7446BE521ECA099600F1BDE5 /* PopularMoviesInteractor.swift in Sources */,
+				749B5E0C1ECAF0320057C448 /* TableViewDataProvider.swift in Sources */,
 				7446BE4C1ECA099600F1BDE5 /* PopularMoviesInteractorProtocol.swift in Sources */,
 				7446BE4A1ECA099600F1BDE5 /* MovieDetailsRouter.swift in Sources */,
+				749B5E051ECAEC2D0057C448 /* MovieInfoRecord.swift in Sources */,
 				7446BE541ECA099600F1BDE5 /* PopularMoviesRouter.swift in Sources */,
 				7446BE551ECA099600F1BDE5 /* PopularMoviesViewController.swift in Sources */,
 				7446BE451ECA099600F1BDE5 /* MovieDetailsRouterProtocol.swift in Sources */,
 				7446BE501ECA099600F1BDE5 /* PopularMoviesViewProtocol.swift in Sources */,
+				749B5E0D1ECAF0320057C448 /* UITableView+DataProvider.swift in Sources */,
 				7446BE431ECA099600F1BDE5 /* MovieDetailsModuleProtocol.swift in Sources */,
 				7446BE491ECA099600F1BDE5 /* MovieDetailsPresenter.swift in Sources */,
 			);
@@ -714,7 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWM485UMH5;
-				INFOPLIST_FILE = MovieDatabaseClient/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieDatabaseClient/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = selfeducation.MovieDatabaseClient;
@@ -729,7 +801,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWM485UMH5;
-				INFOPLIST_FILE = MovieDatabaseClient/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieDatabaseClient/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = selfeducation.MovieDatabaseClient;
@@ -742,7 +814,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 16134389E78ECD13FC7B98CF /* Pods-MovieDatabaseClientTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = WWM485UMH5;
 				INFOPLIST_FILE = MovieDatabaseClientTests/Info.plist;
@@ -758,7 +830,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29CDB35DA9BECC8E456DBCB1 /* Pods-MovieDatabaseClientTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = WWM485UMH5;
 				INFOPLIST_FILE = MovieDatabaseClientTests/Info.plist;

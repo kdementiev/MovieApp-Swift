@@ -10,6 +10,10 @@ import Foundation
 
 protocol PopularMoviesInteractorOutput: class {
     
+    func onNewContentReceived(_ movies: [MovieInfoRecord])
+    
+    func onNetworkConnectionLost()
+    func onNetworkConnectionRestored()
 }
 
 protocol PopularMoviesInteractorProtocol: class {
@@ -19,4 +23,7 @@ protocol PopularMoviesInteractorProtocol: class {
         Method offered to perform initial preparations inside interactor.
      */
     func prepare()
+    
+    func requestContent()
+    func movie(forIndex index: Int)
 }

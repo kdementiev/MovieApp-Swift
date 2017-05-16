@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopularMoviesViewController: UITableViewController, PopularMoviesViewProtocol {
+class PopularMoviesViewController: UITableViewController {
 
     var output: PopularMoviesViewOutput?
     
@@ -21,22 +21,27 @@ class PopularMoviesViewController: UITableViewController, PopularMoviesViewProto
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        // You can forward these method to interactor through presenter or
-        // perform subscribe via notification center inside interactor.
+    @IBAction func onRefreshAction(_ sender: Any) {
+        self.output?.userWantsLatestContent()
+    }
+}
+
+extension PopularMoviesViewController: PopularMoviesViewProtocol {
+    
+    func presentContent(withMovies movies: [MovieInfoRecord]) {
+        
+        // Apply content to table view.
+        self.tableView.contentProvider = MoviesDataProvider(withMovies: movies, withDelegate: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showOfflineState(offline: Bool) {
+        
     }
-    */
+}
 
+extension PopularMoviesViewController: MoviesDataProviderDelegate {
+    
+    func onMovieSelectedAction(_ indexPath: IndexPath) {
+        self.output?.userWantsDetailedInformation(withItemAtIndex: indexPath.row)
+    }
 }

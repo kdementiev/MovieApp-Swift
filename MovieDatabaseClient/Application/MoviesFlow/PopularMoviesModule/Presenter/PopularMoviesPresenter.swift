@@ -18,9 +18,34 @@ class PopularMoviesPresenter: PopularMoviesPresenterProtocol {
     var moduleOutput: PopularMoviesModuleOutputProtocol?
     
     
+    // MARK: - View Layer feedback -
+    
     func viewReadyForInteraction() {
         
         // Forward event to interactor
         interactor?.prepare()
     }
+    
+    func userWantsLatestContent() {
+        
+    }
+    
+    func userWantsDetailedInformation(withItemAtIndex index: Int) {
+        
+    }
+    
+    // MARK: - Interactor Layer feedback -
+    
+    func onNewContentReceived(_ movies: [MovieInfoRecord]) {
+        
+    }
+    
+    func onNetworkConnectionLost() {
+        
+    }
+    
+    func onNetworkConnectionRestored() {
+        
+    }
+    
 }

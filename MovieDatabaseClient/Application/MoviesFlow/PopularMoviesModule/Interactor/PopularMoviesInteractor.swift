@@ -8,10 +8,22 @@
 
 import Foundation
 
-class PopularMoviesInteractor: PopularMoviesInteractorProtocol {
+class PopularMoviesInteractor {
     var output: PopularMoviesInteractorOutput?
     
+}
+
+extension PopularMoviesInteractor: PopularMoviesInteractorProtocol {
+    
     func prepare() {
+        
+    }
+    
+    func requestContent() {
+        
+    }
+    
+    func movie(forIndex index: Int) {
         
     }
 }

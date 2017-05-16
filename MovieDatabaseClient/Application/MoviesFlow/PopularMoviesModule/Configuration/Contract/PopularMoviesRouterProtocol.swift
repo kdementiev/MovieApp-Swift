@@ -10,4 +10,6 @@ import Foundation
 
 protocol PopularMoviesRouterProtocol: class {
     
+    func navigateToMovieDetails(withMovie movie: MovieInfoRecord)
+    
 }

@@ -10,4 +10,8 @@ import UIKit
 
 class PopularMoviesRouter: PopularMoviesRouterProtocol {
     weak var viewController: UIViewController?
+    
+    func navigateToMovieDetails(withMovie movie: MovieInfoRecord) {
+        
+    }
 }

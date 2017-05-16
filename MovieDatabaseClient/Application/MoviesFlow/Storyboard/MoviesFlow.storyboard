@@ -13,13 +13,13 @@
         <!--Popular Movies-->
         <scene sceneID="4vg-lM-hI3">
             <objects>
-                <tableViewController id="pQi-59-9A8" sceneMemberID="viewController">
+                <tableViewController id="pQi-59-9A8" customClass="PopularMoviesViewController" customModule="MovieDatabaseClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" id="8gd-SD-ORD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="180" id="yBm-Le-Dix" customClass="MovieTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="180" id="yBm-Le-Dix" customClass="MovieTableViewCell" customModule="MovieDatabaseClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yBm-Le-Dix" id="ZUQ-cr-rXO">
@@ -89,12 +89,11 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="backgroundImageView" destination="diQ-bn-oxZ" id="TrO-88-k4Z"/>
-                                    <outlet property="originalTitleLabel" destination="NF0-fg-Spx" id="cfy-Y7-Gda"/>
-                                    <outlet property="overviewLabel" destination="00L-pw-Pky" id="nSo-UG-iTv"/>
-                                    <outlet property="rateImageView" destination="kJA-AX-g2r" id="xrr-Oi-Dsc"/>
-                                    <outlet property="rateLabel" destination="U9b-l6-5bl" id="POu-m0-a2Y"/>
-                                    <outlet property="titleLabel" destination="CzQ-fU-lyP" id="pQH-M7-02s"/>
+                                    <outlet property="backgroundImageView" destination="diQ-bn-oxZ" id="6v9-YF-XWK"/>
+                                    <outlet property="originalTitleLabel" destination="NF0-fg-Spx" id="o0B-Nv-65v"/>
+                                    <outlet property="overviewLabel" destination="00L-pw-Pky" id="U2Z-oI-TrH"/>
+                                    <outlet property="rateLabel" destination="U9b-l6-5bl" id="Vk3-He-qXL"/>
+                                    <outlet property="titleLabel" destination="CzQ-fU-lyP" id="rUd-ZH-4Wn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -111,11 +110,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
-                            <action selector="onRefreshAction:" destination="pQi-59-9A8" eventType="valueChanged" id="PvM-H5-LGY"/>
+                            <action selector="onRefreshAction:" destination="pQi-59-9A8" eventType="valueChanged" id="TD7-K3-BZ2"/>
                         </connections>
                     </refreshControl>
                     <connections>
-                        <outlet property="contentRefreshControl" destination="tDR-7B-c4I" id="6nv-ms-jhc"/>
                         <segue destination="RY2-4I-pkL" kind="show" identifier="PopularMoviesToMovieDetailsSegue" id="xWl-kA-nVe"/>
                     </connections>
                 </tableViewController>
