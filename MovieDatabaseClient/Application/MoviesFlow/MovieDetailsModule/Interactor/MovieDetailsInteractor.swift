@@ -11,6 +11,12 @@ import Foundation
 class MovieDetailsInteractor: MovieDetailsInteractorProtocol {
     var output: MovieDetailsInteractorOutput?
     
+    private var movie: MovieInfoRecord
+    
+    init(movie: MovieInfoRecord) {
+        self.movie = movie
+    }
+    
     func prepare() {
         
     }

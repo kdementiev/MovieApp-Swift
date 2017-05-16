@@ -14,7 +14,6 @@ struct PageRecord<Element> {
     
     var page: Int
     var totalPages: Int
-    var results: Int
     
     var elements: [Element]
 }

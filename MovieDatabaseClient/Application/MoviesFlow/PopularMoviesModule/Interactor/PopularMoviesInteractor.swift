@@ -20,6 +20,7 @@ class PopularMoviesInteractor {
     
     lazy var moviesTokenSource: CancellationTokenSource? = CancellationTokenSource()
     
+    
     fileprivate func cancelNetworkingOperation() {
         moviesTokenSource?.cancel()
         moviesTokenSource = nil
@@ -31,7 +32,7 @@ extension PopularMoviesInteractor: PopularMoviesInteractorProtocol {
     func prepare() {
         
         // Try to load default content.
-        self.requestContent()
+        self.reload()
         
         // 
         networkStatusService.subscribeForRefreshNetworkingEvent(subscriber: self) { [weak self] (available: Bool) in
@@ -41,25 +42,25 @@ extension PopularMoviesInteractor: PopularMoviesInteractorProtocol {
                 return
             }
             
-            self?.requestContent()
+            self?.reload()
             self?.output?.onNetworkConnectionRestored()
         }
     }
     
-    func requestContent() {
+    func reload() {
         
         self.cancelNetworkingOperation()
         
         firstly {
             moviesNetworking.fetchPopularMovies(moviesTokenSource?.token)
         }.then { page -> Void in
-                
+            self.output?.onNewContentReceived(page.elements)
         }.catch { error in
-            
         }
     }
     
-    func movie(forIndex index: Int) -> MovieInfoRecord? {
-        return nil
+    func requestMoreContent() {
+        // fetch for page..
     }
+    
 }

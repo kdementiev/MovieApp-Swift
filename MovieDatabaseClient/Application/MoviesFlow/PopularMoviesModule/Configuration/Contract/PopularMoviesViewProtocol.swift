@@ -16,7 +16,10 @@ protocol PopularMoviesViewOutput: class {
     func viewReadyForInteraction()
     
     func userWantsLatestContent()
-    func userWantsDetailedInformation(withItemAtIndex index: Int)
+    func userWantsMoreContent()
+    
+    func userWantsDetailedInformation(forMovie movie: MovieInfoRecord)
+    
 }
 
 protocol PopularMoviesViewProtocol: class {

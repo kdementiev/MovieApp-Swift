@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        let rootViewController = self.window?.rootViewController as? UINavigationController
+        let moduleController = rootViewController?.topViewController
+        
+        guard let moduleView = moduleController as? PopularMoviesViewProtocol else {
+            assertionFailure("No root view controller found.")
+            return false
+        }
+        
+        PopularMoviesModuleConfigurator.configurateModule(view: moduleView, delegate: nil)
+        
         return true
     }
 

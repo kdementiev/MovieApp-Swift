@@ -10,6 +10,7 @@ import UIKit
 
 class PopularMoviesModuleConfigurator {
     
+    @discardableResult
     static func configurateModule(view: PopularMoviesViewProtocol?, delegate: PopularMoviesModuleOutputProtocol?)
         -> (view: UIViewController?, module: PopularMoviesModuleInputProtocol?) {
             

@@ -32,6 +32,9 @@ extension PopularMoviesViewController: PopularMoviesViewProtocol {
         
         // Apply content to table view.
         self.tableView.contentProvider = MoviesDataProvider(withMovies: movies, withDelegate: self)
+        
+        // Disable refreshing
+        self.refreshControl?.endRefreshing()
     }
     
     func showOfflineState(offline: Bool) {
@@ -41,7 +44,7 @@ extension PopularMoviesViewController: PopularMoviesViewProtocol {
 
 extension PopularMoviesViewController: MoviesDataProviderDelegate {
     
-    func onMovieSelectedAction(_ indexPath: IndexPath) {
-        self.output?.userWantsDetailedInformation(withItemAtIndex: indexPath.row)
+    func onMovieSelectedAction(_ movie: MovieInfoRecord) {
+        self.output?.userWantsDetailedInformation(forMovie: movie)
     }
 }

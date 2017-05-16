@@ -26,18 +26,18 @@ class PopularMoviesPresenter: PopularMoviesPresenterProtocol {
         interactor?.prepare()
     }
     
-    func userWantsLatestContent() {
-        
-        // Ask to fetch more data.
-        interactor?.requestContent()
+    func userWantsMoreContent() {
+        // Try to request more elements
+        interactor?.requestMoreContent()
     }
     
-    func userWantsDetailedInformation(withItemAtIndex index: Int) {
-        
-        guard let movie = interactor?.movie(forIndex: index) else {
-            return
-        }
-        
+    func userWantsLatestContent() {
+        // Ask to fetch more data.
+        interactor?.reload()
+    }
+    
+    func userWantsDetailedInformation(forMovie movie: MovieInfoRecord) {
+        // Navigate to detailed screen.
         router?.navigateToMovieDetails(withMovie: movie)
     }
     

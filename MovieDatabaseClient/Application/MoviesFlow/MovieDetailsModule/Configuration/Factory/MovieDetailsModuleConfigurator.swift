@@ -10,12 +10,13 @@ import UIKit
 
 class MovieDetailsModuleConfigurator {
     
-    static func configurateModule(view: MovieDetailsViewProtocol?, delegate: MovieDetailsModuleOutputProtocol?)
+    @discardableResult
+    static func configurateModule(view: MovieDetailsViewProtocol?, delegate: MovieDetailsModuleOutputProtocol?, movie: MovieInfoRecord)
         -> (view: UIViewController?, module: MovieDetailsModuleInputProtocol?) {
         
         assert(view != nil, "Please, provide view instance.")
         
-        let interactor = MovieDetailsInteractor()
+        let interactor = MovieDetailsInteractor(movie: movie)
         let presenter = MovieDetailsPresenter()
         let router = MovieDetailsRouter()
         

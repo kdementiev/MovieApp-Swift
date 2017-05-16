@@ -24,6 +24,6 @@ protocol PopularMoviesInteractorProtocol: class {
      */
     func prepare()
     
-    func requestContent()
-    func movie(forIndex index: Int) -> MovieInfoRecord?
+    func reload()
+    func requestMoreContent()
 }

@@ -9,7 +9,8 @@
 import UIKit
 
 protocol MoviesDataProviderDelegate: class {
-    func onMovieSelectedAction(_ index: IndexPath)
+    func onMovieSelectedAction(_ movie: MovieInfoRecord)
+    
 }
 
 class MoviesDataProvider: NSObject {
@@ -48,7 +49,10 @@ extension MoviesDataProvider: UITableViewDataSource {
             cell?.overviewLabel.text = movieInfo.overview
             
             cell?.setRate(movieInfo.rate)
-            cell?.setImageLink(movieInfo.coverLink)
+            
+            if let link = movieInfo.coverLink {
+                cell?.setImageLink(link)
+            }
         }
 
         return cell!
@@ -58,6 +62,11 @@ extension MoviesDataProvider: UITableViewDataSource {
 extension MoviesDataProvider: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.onMovieSelectedAction(indexPath)
+        
+        guard let movieInfo = self.movies?[indexPath.row] else {
+            return
+        }
+        
+        self.delegate?.onMovieSelectedAction(movieInfo)
     }
 }
