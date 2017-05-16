@@ -1,0 +1,8 @@
+# CocoaPods
+Podfile.lock
+Pods
+
+# Xcode
+MovieDatabaseClient.xcworkspace
+xcuserdata/
+*.xcuserstate
